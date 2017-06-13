@@ -5,9 +5,8 @@
  * add by yyb5683@gmail.com
  * 2015年12月10日11:33:26
  */
-if (ENVIRONMENT != 'product'){
-	ini_set('memory_limit', '256M');
-}
+ini_set("display_errors", "On");
+error_reporting(E_ALL | E_STRICT);
 class MY_Controller extends CI_Controller{
 	
 	/**
