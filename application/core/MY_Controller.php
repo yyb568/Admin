@@ -27,6 +27,8 @@ class MY_Controller extends CI_Controller{
 		parent::__construct();
 		$this->isLogin();					// 检查登录状态
 		$this->role();						//检查权限
+		$this->template['uname'] = $this->uname;
+		$this->template['userinfo'] = $this->userinfo;
 	}
 	
 	/**
