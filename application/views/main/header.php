@@ -13,4 +13,5 @@
     <link href="<?=static_url("css")?>font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
     <link href="<?=static_url("css")?>animate.min.css" rel="stylesheet">
     <link href="<?=static_url("css")?>style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="<?=static_url("css") ?>plugins/toastr/toastr.min.css" rel="stylesheet">
 </head>
