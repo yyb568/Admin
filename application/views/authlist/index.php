@@ -1,6 +1,16 @@
 <?php $this->load->view("main/header");?>
 <body class="gray-bg">
     <div class="wrapper wrapper-content animated fadeInRight">
+     <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                	<button class="btn btn-danger " type="button" onClick="addNew();"><i class="fa fa-check"></i>&nbsp;新增</button>
+					<button class="btn btn-primary " type="button" onClick="SearchTime();"><i class="fa fa-paste"></i>&nbsp;查询条件</button>
+					<button class="btn btn-success " type="button" onClick="window.location.reload();"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>&nbsp;刷新页面</button>
+					
+                </div>
+            </div>
+        </div>
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -42,11 +52,29 @@
                                 <?php }?>
                             </tbody>
                         </table>
+                         <?=$Page; ?>
                     </div>
                 </div>
         </div>
  </div>
 <?php $this->load->view("main/footer")?>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script>
+//新增
+function addNew(){
+	showFarme('新增管理员','<?=site_url("authlist/authlist/doAdd")?>','80%','90%');
+}
+//详情
+function LockInfo(id){
+	showFarme('管理员详细资料','<?=site_url("authlist/authlist/lockInfo")?>/'+id,'80%','90%');
+}
+//编辑
+function Edit(id){
+	showFarme('管理员详细资料','<?=site_url("authlist/authlist/Edit")?>/'+id,'80%','90%');
+}
+//删除
+function Del(id){
+	showFarme('管理员详细资料','<?=site_url("authlist/authlist/Del")?>/'+id,'80%','90%');
+}
+</script>
 </body>
 </html>
