@@ -103,4 +103,20 @@ class Blog extends MY_Controller{
 	    	$this->splitJson('保存成功！',0);
 	    }
 	}
+	
+	/**
+	 * 删除文章
+	 * add by yyb5683@gmail.com
+	 * 2017年2月16日15:58:14
+	 */
+	public function DelInfo($id){
+		if (empty($id)){$this->splitJson('无效的ID属性值！',1);}
+		$this->common_model->set_table("blog");
+		$info_id = $this->common_model->delById($id);
+		if (empty($info_id)){
+			$this->splitJson('删除失败！',1);
+		}else{
+			$this->splitJson('删除成功！',0);
+		}
+	}
 } 

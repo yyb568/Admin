@@ -46,10 +46,8 @@
 				                                <li><a href="javascript:void(0);LockInfo(<?=$val['id']?>);" class="font-bold">查看详情</a></li>
 			                                	<li class="divider"></li>
 			                                    <li><a href="javascript:void(0);Edit(<?=$val['id']?>);" class="font-bold">编辑</a></li>
-			                                    <?php if ($val['status'] == 0){ 		// 只有0的时候才能删除?>
 			                                    <li class="divider"></li>
 			                                    <li><a href="javascript:void(0);Del(<?=$val['id']?>);">删除</a></li>
-			                                    <?php } ?>
 	                                		</ul>
 	                            		</div>
                                     </td>
@@ -68,17 +66,24 @@
 function addNew(){
 	showFarme('新增文章','<?=site_url("blog/blog/doAdd")?>','80%','90%');
 }
-//详情
-function LockInfo(id){
-	showFarme('文章详细资料','<?=site_url("authlist/authlist/lockInfo")?>/'+id,'80%','90%');
-}
 //编辑
 function Edit(id){
 	showFarme('编辑文章','<?=site_url("blog/blog/doAdd")?>/'+id,'80%','90%');
 }
 //删除
-function Del(id){
-	showFarme('删除文章','<?=site_url("authlist/authlist/Del")?>/'+id,'80%','90%');
+function Del(group_id){
+	layer.confirm('您确定要删除吗', {
+	    btn: ['确定','取消'] //按钮
+	}, function(){
+		$.get("<?=site_url("blog/blog/DelInfo") ?>/"+group_id,function(data){
+			if (data.status == 1){
+				showTips(data.info,'error');
+			}else{
+				showTips('删除成功！','success');
+				setTimeout(function(){window.location.reload();},1000);
+			}
+		},'json');
+	});
 }
 </script>
 </body>
