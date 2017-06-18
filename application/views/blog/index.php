@@ -74,7 +74,7 @@ function LockInfo(id){
 }
 //编辑
 function Edit(id){
-	showFarme('编辑文章','<?=site_url("authlist/authlist/Edit")?>/'+id,'80%','90%');
+	showFarme('编辑文章','<?=site_url("blog/blog/doAdd")?>/'+id,'80%','90%');
 }
 //删除
 function Del(id){

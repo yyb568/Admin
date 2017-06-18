@@ -42,7 +42,7 @@
                              <div class="form-group">
                             <label class="col-sm-2 control-label">文章内容：</label>
                             <div class="col-sm-10">
-                                <textarea name="msg" id="msg" style="width:700px;;height:300px;"><?=$info['msg']?></textarea>
+                                <textarea name="msg" id="msg" style="width:700px;;height:300px;"><?=$info['content']?></textarea>
                             </div>
                         </div>
                             <div class="form-group">
