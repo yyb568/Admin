@@ -92,6 +92,7 @@ class Blog extends MY_Controller{
 	    if (empty($data['classify'])){$this->splitJson('请选择文章分类！',1);}
 	    if (empty($data['content'])){$this->splitJson('请填写文章内容！',1);}
 	    
+	    $data['user_id'] = $this->user_id;
 	    $data['created'] = time();
 	    //准备入库
 	    $this->common_model->set_table("blog");
