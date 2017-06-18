@@ -11,4 +11,22 @@ class Common_model extends MY_Model{
 		parent::__construct();
 	}
 	
+	/**
+	 * 获取文章分类
+	 * add by yyb5683@gmail.com
+	 * 2017年6月18日13:39:58
+	 */
+	public function get_Classification(){
+		$params = array (
+			 'table' => 'classify',
+			 'select' => 'id,aname',
+			 'limit' => -1
+		);
+		//整理数据
+		$list = $this->get_list($params);
+		foreach ($list as $key => $val){
+			$_list[$val['id']] = $val;
+		}
+		return $_list;
+	}
 }

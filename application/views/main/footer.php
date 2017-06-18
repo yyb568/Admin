@@ -6,6 +6,7 @@
     <script src="<?=static_url("js")?>hplus.min.js?v=4.1.0"></script>
     <script type="text/javascript" src="<?=static_url("js")?>contabs.min.js"></script>
     <script src="<?=static_url("js")?>plugins/pace/pace.min.js"></script>
+    <script src="<?=static_url("js") ?>plugins/toastr/toastr.min.js"></script>
     <script src="<?=static_url("js") ?>common.js"></script>
 </body>
 </html>
