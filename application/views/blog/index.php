@@ -75,7 +75,7 @@ function Del(group_id){
 	layer.confirm('您确定要删除吗', {
 	    btn: ['确定','取消'] //按钮
 	}, function(){
-		$.get("<?=site_url("blog/blog/DelInfo") ?>/"+group_id,function(data){
+		$.get("<?=site_url("blog/blog/DelInfo")?>/"+group_id,function(data){
 			if (data.status == 1){
 				showTips(data.info,'error');
 			}else{
