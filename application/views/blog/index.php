@@ -31,7 +31,7 @@
                                <?php foreach ((array)$list as $key => $val){?>
                                 <tr>
                                     <td><?=$val['titles'] ?></td>
-                                    <td> <?=$ClassList[$val['id']]['aname']?></td>
+                                    <td> <?=$ClassList[$val['classify']]['aname']?></td>
                                     <td><?php if ($val['status'] == 1){?>
                                     	未发表
                                     	<?php }else{?>
